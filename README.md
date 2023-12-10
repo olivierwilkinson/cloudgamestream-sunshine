@@ -13,7 +13,7 @@ A Powershell one-click solution to enable NVIDIA GeForce Experience GameStream o
 ## Installation
 Copy and paste these commands in the machine's Powershell prompt (requires Administrator permissions):
 ```
-[Net.ServicePointManager]::SecurityProtocol = "tls12, tls11, tls";Set-ExecutionPolicy Unrestricted;Invoke-WebRequest -Uri https://github.com/tomgrice/cloudgamestream-sunshine/releases/download/June2021a/cloudgamestream-sunshine.zip -OutFile arch.zip;Add-Type -Assembly "System.IO.Compression.Filesystem";$dir = [string](Get-Location);rmdir -r cloudgamestream-master -ErrorAction Ignore;[System.IO.Compression.ZipFile]::ExtractToDirectory($dir + "\arch.zip", $dir);cd cloudgamestream;./Setup.ps1
+[Net.ServicePointManager]::SecurityProtocol = "tls12, tls11, tls";Set-ExecutionPolicy Unrestricted;Invoke-WebRequest -Uri https://github.com/olivierwilkinson/cloudgamestream-sunshine/archive/refs/tags/v1.0.0.zip -OutFile arch.zip;Add-Type -Assembly "System.IO.Compression.Filesystem";$dir = [string](Get-Location);rmdir -r cloudgamestream-master -ErrorAction Ignore;[System.IO.Compression.ZipFile]::ExtractToDirectory($dir + "\arch.zip", $dir);cd cloudgamestream-sunshine-1.0.0;./Setup.ps1
 ```
 Or you can download the script and binaries from [here](https://github.com/tomgrice/cloudgamestream-sunshine/releases/download/June2021a/cloudgamestream-sunshine.zip).  
 &nbsp;  
