@@ -7,7 +7,7 @@ If (-not ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdenti
 Write-Host "Enabling NVIDIA FrameBufferCopy..."
 $ExitCode = (Start-Process -FilePath "$WorkDir\NvFBCEnable.exe" -ArgumentList "-enable" -NoNewWindow -Wait -PassThru).ExitCode
 if($ExitCode -ne 0) {
-    throw "Failed to enable NvFBC. (Error: $ExitCode)"
+    Write-Host "Failed to enable NvFBC. (Error: $ExitCode)"
 } else {
     Write-Host "Enabled NvFBC successfully." -ForegroundColor DarkGreen
 }
