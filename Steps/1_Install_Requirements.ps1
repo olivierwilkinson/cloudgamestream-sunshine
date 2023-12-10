@@ -47,7 +47,7 @@ $ExitCode = (Start-Process -FilePath "$WorkDir\redist_x86.exe" -ArgumentList "/i
 if($ExitCode -eq 0) { Write-Host "Installed." -ForegroundColor Green }
 elseif($ExitCode -eq 1638) { Write-Host "Newer version already installed." -ForegroundColor Green }
 else {
-    throw "Visual C++ Redist 2015-19 x86 installation failed (Error: $ExitCode)."
+    Write-Host "Visual C++ Redist 2015-19 x86 installation failed (Error: $ExitCode)."
 }
 
 if($ENV:PROCESSOR_ARCHITECTURE -eq 'AMD64') {
@@ -57,7 +57,7 @@ if($ENV:PROCESSOR_ARCHITECTURE -eq 'AMD64') {
     if($ExitCode -eq 0) { Write-Host "Installed." -ForegroundColor Green }
     elseif($ExitCode -eq 1638) { Write-Host "Newer version already installed." -ForegroundColor Green }
     else {
-         throw "Visual C++ Redist 2015-19 x64 installation failed (Error: $ExitCode)."
+        Write-Host "Visual C++ Redist 2015-19 x64 installation failed (Error: $ExitCode)."
     }
 }
 
